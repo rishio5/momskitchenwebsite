@@ -1,142 +1,196 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .navbar {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  height: 60px;
+  padding: 10px;
   background-color: rgb(255, 192, 226);
   border-radius: 2px;
 }
 
 .logo img {
-  height: 60px;
-}
-.logo img:hover {
-  transform: scale(1.5);
-  transition-duration: 5s;
-  transition-delay: 2s;
-  transition-timing-function: ease-in;
+  height: 50px;
+  transition: transform 0.5s ease-in-out;
 }
 
-.address {
+.logo img:hover {
+  transform: scale(2);
+}
+
+.address,
+.search,
+.addcart,
+.button1,
+.button2 {
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  transition: border 0.3s ease-in-out;
   display: flex;
   align-items: center;
-  gap: 1px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #543b26;
+  gap: 5px;
 }
 
-.select1 {
+.address:hover,
+.search:hover,
+.addcart:hover {
+  border-color: rgb(255, 140, 0);
+}
+
+.select1,
+.select2 {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
-.border {
-  border: 2px solid transparent;
-  transition: border 0.3s ease-in-out;
+
+.button1 button,
+.button2 button {
+  padding: 8px 15px;
+  background-color: rgb(255, 140, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.border:hover {
-  border: 2px solid rgb(255, 140, 0);
+
+.button1 button:hover,
+.button2 button:hover {
+  background-color: rgb(200, 100, 0);
 }
-.search i {
-  justify-content: center;
-  height: 1px;
+
+.launch img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  animation: disco 1s infinite alternate;
 }
-.addcart {
-  display: flex;
-  align-items: center;
+
+@keyframes disco {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
+
 .content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-border:5px solid white
-  background-color: rgb(255, 221, 0);
+  gap: 20px;
+  padding: 20px;
+  background-color: white;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  width: 100%;
 }
 
 .box {
+  flex: 1 1 calc(50% - 40px);
+  max-width: 400px;
   border: 2px solid yellow;
-  height: 400px;
-  width: 45%;
-  margin: 15px;
   background-color: rgb(255, 192, 226);
+  transition: transform 0.3s ease-in-out;
+  padding: 10px;
+  text-align: center;
 }
+
+.box:hover {
+  transform: scale(1.05);
+  border: 5px solid rgb(255, 196, 0);
+}
+
 .box-img {
-  height: 300px;
+  width: 100%;
+  height: 250px;
   background-size: cover;
   background-position: center;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-.box:hover{
-  transform: scale(1);
-  transform-origin: 2s;
-  transition-delay: 0.5s;
-  border:5px solid rgb(255, 196, 0)
+  border-radius: 10px;
 }
 
-.box-content {
-  margin-left: 1rem;
-  margin-right: 1rem;
+footer {
+  background-color: rgb(255, 192, 226);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
 }
-.box-content a {
-  color: blue;
-}
-.launch img {
-    width: 100%; 
-    max-width: 500px; 
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px solid yellow;
-    animation: disco 1s infinite alternate;
-  }
-  
 
-  @keyframes disco {
-    0% { filter: hue-rotate(0deg); }
-    25% { filter: hue-rotate(90deg); }
-    50% { filter: hue-rotate(180deg); }
-    75% { filter: hue-rotate(270deg); }
-    100% { filter: hue-rotate(360deg); }
-  }
-  .foot {
-    width: 100%;
-    padding: 5px 0; /* Adjust padding for spacing */
-    margin: 0; /* Removes unwanted spacing */
-  }
-  
-  footer {
-    background-color: rgb(255, 192, 226);
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center-align content */
-    text-align: center;
-    gap: 5px; /* Ensures minimal spacing */
-    padding: 10px 0;
-  }
-  
-  .footer,
-  .social,
-  .footer1 {
-    display: flex;
-    justify-content: center;
+.foot {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.footer1 p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
     align-items: center;
-    width: 100%;
+    gap: 10px;
   }
-  
-  .social {
-    gap: 15px; /* Adds spacing between social icons */
+
+  .content {
+    justify-content: center;
   }
-  
-  .footer1 p {
-    font-size: 14px; /* Adjust font size */
-    font-weight: bold; /* Make it look prominent */
+
+  .box {
+    flex: 1 1 calc(50% - 20px);
   }
-  
+
+  .box-img {
+    height: 200px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    flex: 1 1 100%;
+  }
+
+  .box-img {
+    height: 180px;
+  }
+
+  .social i {
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+a {
+  text-decoration: none;
+}
